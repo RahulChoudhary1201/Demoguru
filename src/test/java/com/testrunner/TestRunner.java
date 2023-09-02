@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.basesetup.BaseDriverSetup;
+import com.objects.FlightsPage;
 import com.objects.HomePage;
 import com.objects.LoginPage;
 import com.objects.RegistrationPage;
@@ -17,7 +18,7 @@ import com.utils.PropertiesFileReader;
 public class TestRunner extends BaseDriverSetup {
 
 	LoginPage lp;
-	RegistrationPage rp;
+	FlightsPage fp;
 
 	@Test(priority = 0)
 	public void loginTest() throws IOException {
@@ -33,7 +34,6 @@ public class TestRunner extends BaseDriverSetup {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Login: Mercury Tours");
 		System.out.println(lp.getLoginMsg());
-		rp = lp.registeringCustBtnClick();
 	}
 	@Test(priority = 2, dataProvider = "myData")
 	public void registrationFormFilling(String firstNameValue,
@@ -42,12 +42,26 @@ public class TestRunner extends BaseDriverSetup {
 			String postalCodeValue, String countryValue, String userNameValue,
 			String passValue, String confirmPassValue)
 			throws InterruptedException {
+		RegistrationPage rp = new RegistrationPage(driver);
+		rp.navigatingToRegPage();
 		String title = rp.getRegPageTitle();
 		Assert.assertEquals(title, "Register: Mercury Tours");
-		rp.fillingForm(firstNameValue, lastNameValue, phoneValue, emailValue,
-				addressValue, cityValue, stateValue, postalCodeValue,
-				countryValue, userNameValue, passValue, confirmPassValue);
+		fp = rp.fillingForm(firstNameValue, lastNameValue, phoneValue,
+				emailValue, addressValue, cityValue, stateValue,
+				postalCodeValue, countryValue, userNameValue, passValue,
+				confirmPassValue);
+		fp.navigateToFPage();
+		Assert.assertEquals(fp.getFlightPageTitle(),
+				"Find a Flight: Mercury Tours:");
+		fp.fillingFlightDetails("3", "Sydney", "9", "16", "Paris", "10", "19",
+				"Unified Airlines");
 
+	}
+
+	@Test(priority = 3, enabled = false)
+	public void bookingFlights() {
+		fp.fillingFlightDetails("3", "Sydney", "9", "16", "Paris", "10", "19",
+				"Unified Airlines");
 	}
 
 	@DataProvider(name = "myData")

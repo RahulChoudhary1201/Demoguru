@@ -25,5 +25,9 @@ public class WebActions {
 		Select select = new Select(ele);
 		select.selectByValue(value);
 	}
+	public void dropDownByVisibleText(WebElement ele, String value) {
+		Select select = new Select(ele);
+		select.selectByVisibleText(value);
+	}
 
 }

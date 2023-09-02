@@ -12,7 +12,7 @@ public class RegistrationPage extends WebActions {
 		super(driver);
 		this.driver = driver;
 	}
-
+	private By registerBtn = By.xpath("//a[contains(text(),'REGISTER')]");
 	private By firstName = By.xpath("//input[@name='firstName']");
 	private By lastName = By.xpath("//input[@name='lastName']");
 	private By phone = By.xpath("//input[@name='phone']");
@@ -26,12 +26,18 @@ public class RegistrationPage extends WebActions {
 	private By pass = By.xpath("//input[@name='password']");
 	private By confPass = By.xpath("//input[@name='confirmPassword']");
 	private By submitBtn = By.xpath("//input[@name='submit']");
+	
 
 	public String getRegPageTitle() {
 		return driver.getTitle();
 	}
 
-	public void fillingForm(String firstNameValue, String lastNameValue,
+	public void navigatingToRegPage() {
+		driver.findElement(registerBtn).click();
+		waiting(firstName);
+	}
+
+	public FlightsPage fillingForm(String firstNameValue, String lastNameValue,
 			String phoneValue, String emailValue, String addressValue,
 			String cityValue, String stateValue, String postalCodeValue,
 			String countryValue, String userNameValue, String passValue,
@@ -50,6 +56,7 @@ public class RegistrationPage extends WebActions {
 		driver.findElement(pass).sendKeys(passValue);
 		driver.findElement(confPass).sendKeys(confirmPassValue);
 		driver.findElement(submitBtn).click();
+		return new FlightsPage(driver);
 	}
 
 }

@@ -13,8 +13,6 @@
           <include name="tearDown"/>
           <include name="registrationFormFilling" invocation-numbers="0"/>
           <include name="invokeDriver"/>
-          <include name="loginTest"/>
-          <include name="registeration"/>
         </methods>
       </class> <!-- com.testrunner.TestRunner -->
     </classes>

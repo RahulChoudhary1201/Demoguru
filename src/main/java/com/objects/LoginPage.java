@@ -14,8 +14,6 @@ public class LoginPage extends WebActions {
 	}
 
 	private By loginMsg = By.xpath("//h3");
-	private By registerBtn = By.xpath("//a[contains(text(),'REGISTER')]");
-	private By firstName = By.xpath("//input[@name='firstName']");
 
 	public String getLoginPageTitle() {
 		return driver.getTitle();
@@ -24,13 +22,5 @@ public class LoginPage extends WebActions {
 	public String getLoginMsg() {
 		return driver.findElement(loginMsg).getText();
 	}
-
-	public RegistrationPage registeringCustBtnClick() {
-		driver.findElement(registerBtn).click();
-		waiting(firstName);
-		return new RegistrationPage(driver);
-	}
-
-	
 
 }
