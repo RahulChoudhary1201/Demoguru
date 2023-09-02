@@ -20,7 +20,7 @@ public class TestRunner extends BaseDriverSetup {
 	LoginPage lp;
 	FlightsPage fp;
 
-	@Test(priority = 0)
+	@Test
 	public void loginTest() throws IOException {
 		HomePage hp = new HomePage(driver);
 		String title = hp.verifyTitle();
@@ -29,13 +29,13 @@ public class TestRunner extends BaseDriverSetup {
 				".\\src\\test\\java\\com\\testdata\\config.properties");
 		lp = hp.login(prop.getProperty("user"), prop.getProperty("pass"));
 	}
-	@Test(priority = 1)
+	@Test(dependsOnMethods = {"loginTest"})
 	public void registeration() throws InterruptedException {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Login: Mercury Tours");
 		System.out.println(lp.getLoginMsg());
 	}
-	@Test(priority = 2, dataProvider = "myData")
+	@Test(dependsOnMethods = {"registeration"}, dataProvider = "myData")
 	public void registrationFormFilling(String firstNameValue,
 			String lastNameValue, String phoneValue, String emailValue,
 			String addressValue, String cityValue, String stateValue,
