@@ -26,7 +26,6 @@ public class RegistrationPage extends WebActions {
 	private By pass = By.xpath("//input[@name='password']");
 	private By confPass = By.xpath("//input[@name='confirmPassword']");
 	private By submitBtn = By.xpath("//input[@name='submit']");
-	
 
 	public String getRegPageTitle() {
 		return driver.getTitle();
