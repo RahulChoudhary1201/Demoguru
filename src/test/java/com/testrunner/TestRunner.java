@@ -41,7 +41,7 @@ public class TestRunner extends BaseDriverSetup {
 			String addressValue, String cityValue, String stateValue,
 			String postalCodeValue, String countryValue, String userNameValue,
 			String passValue, String confirmPassValue)
-			throws InterruptedException {
+			throws InterruptedException, IOException {
 		RegistrationPage rp = new RegistrationPage(driver);
 		rp.navigatingToRegPage();
 		String title = rp.getRegPageTitle();
@@ -53,8 +53,15 @@ public class TestRunner extends BaseDriverSetup {
 		fp.navigateToFPage();
 		Assert.assertEquals(fp.getFlightPageTitle(),
 				"Find a Flight: Mercury Tours:");
-		fp.fillingFlightDetails("3", "Sydney", "9", "16", "Paris", "10", "19",
-				"Unified Airlines");
+		Properties prop = PropertiesFileReader.readPropertiesFile(
+				".\\src\\test\\java\\com\\testdata\\config.properties");
+		fp.fillingFlightDetails(prop.getProperty("passengerNumber"),
+				prop.getProperty("departingCity"),
+				prop.getProperty("departingMonth"),
+				prop.getProperty("departingDay"),
+				prop.getProperty("arrivingCity"),
+				prop.getProperty("returningMonth"),
+				prop.getProperty("returningDay"), prop.getProperty("airline"));
 
 	}
 
