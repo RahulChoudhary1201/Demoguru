@@ -1,0 +1,44 @@
+[INFO ] 2023-09-05 10:01:01.480 [main] TestRunner - Starting the test for login
+[INFO ] 2023-09-05 10:01:01.487 [main] HomePage - returing the title of HomePage.
+[INFO ] 2023-09-05 10:01:01.495 [main] TestRunner - Getting the page title
+[INFO ] 2023-09-05 10:01:01.500 [main] TestRunner - Entering the Username and password
+[INFO ] 2023-09-05 10:01:01.500 [main] HomePage - Entering the user name and password
+[INFO ] 2023-09-05 10:01:01.662 [main] HomePage - Username and password filled successfully
+[INFO ] 2023-09-05 10:01:04.094 [main] HomePage - Clicking ob the submit button.
+[INFO ] 2023-09-05 10:01:04.094 [main] HomePage - returning the login page Object
+[INFO ] 2023-09-05 10:01:04.096 [main] TestRunner - Login Successfull
+[INFO ] 2023-09-05 10:01:04.115 [main] LoginPage - returning the Login Text displayed after login.
+[INFO ] 2023-09-05 10:01:04.824 [main] RegistrationPage - Clicking on the registration page link for navigating to it.
+[INFO ] 2023-09-05 10:01:07.202 [main] RegistrationPage - Clicked the link and waiting for the page to load.
+[INFO ] 2023-09-05 10:01:07.264 [main] RegistrationPage - returning the title of Registration page.
+[INFO ] 2023-09-05 10:01:07.272 [main] RegistrationPage - Entering the data from the dataprovide to respective fields.
+[INFO ] 2023-09-05 10:01:08.222 [main] RegistrationPage - Entered all the data. Clicking on the Submit button.
+[INFO ] 2023-09-05 10:01:09.611 [main] RegistrationPage - Clicked on the submit button and returing Flights page Object.
+[INFO ] 2023-09-05 10:01:09.614 [main] FlightsPage - Clicking on the Flights page link, for navigating to the Flights page
+[INFO ] 2023-09-05 10:01:10.633 [main] FlightsPage - returning the title of Flights page.
+[INFO ] 2023-09-05 10:01:10.641 [main] FlightsPage - Started Entering the data.
+[INFO ] 2023-09-05 10:01:11.601 [main] FlightsPage - Entered all the data in the respective fields
+[INFO ] 2023-09-05 10:01:12.699 [main] FlightsPage - Clicking on the Continue button to submit the form.
+[INFO ] 2023-09-05 10:07:12.016 [main] TestRunner - Starting the test for login
+[INFO ] 2023-09-05 10:07:12.020 [main] HomePage - returing the title of HomePage.
+[INFO ] 2023-09-05 10:07:12.034 [main] TestRunner - Getting the page title
+[INFO ] 2023-09-05 10:07:12.036 [main] TestRunner - Title verified for Homepage.
+[INFO ] 2023-09-05 10:07:12.037 [main] TestRunner - Entering the Username and password
+[INFO ] 2023-09-05 10:07:12.037 [main] HomePage - Entering the user name and password
+[INFO ] 2023-09-05 10:07:12.228 [main] HomePage - Username and password filled successfully
+[INFO ] 2023-09-05 10:07:15.087 [main] HomePage - Clicking ob the submit button.
+[INFO ] 2023-09-05 10:07:15.087 [main] HomePage - returning the login page Object
+[INFO ] 2023-09-05 10:07:15.089 [main] TestRunner - Login Successfull
+[INFO ] 2023-09-05 10:07:15.107 [main] TestRunner - Title verified for Loginpage.
+[INFO ] 2023-09-05 10:07:15.107 [main] LoginPage - returning the Login Text displayed after login.
+[INFO ] 2023-09-05 10:07:15.881 [main] RegistrationPage - Clicking on the registration page link for navigating to it.
+[INFO ] 2023-09-05 10:07:18.559 [main] RegistrationPage - Clicked the link and waiting for the page to load.
+[INFO ] 2023-09-05 10:07:18.606 [main] RegistrationPage - returning the title of Registration page.
+[INFO ] 2023-09-05 10:07:18.615 [main] RegistrationPage - Entering the data from the dataprovide to respective fields.
+[INFO ] 2023-09-05 10:07:19.467 [main] RegistrationPage - Entered all the data. Clicking on the Submit button.
+[INFO ] 2023-09-05 10:07:21.235 [main] RegistrationPage - Clicked on the submit button and returing Flights page Object.
+[INFO ] 2023-09-05 10:07:21.238 [main] FlightsPage - Clicking on the Flights page link, for navigating to the Flights page
+[INFO ] 2023-09-05 10:07:24.701 [main] FlightsPage - returning the title of Flights page.
+[INFO ] 2023-09-05 10:07:24.711 [main] FlightsPage - Started Entering the data.
+[INFO ] 2023-09-05 10:07:25.590 [main] FlightsPage - Entered all the data in the respective fields
+[INFO ] 2023-09-05 10:07:27.603 [main] FlightsPage - Clicking on the Continue button to submit the form.

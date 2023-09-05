@@ -17,8 +17,6 @@ public class ExcelUtils {
 
 	public static Object[][] readExcelData(String sheetName) throws Exception {
 		String[][] arrayExcelData = null;
-		FileInputStream file = null;
-
 		String workingDir = System.getProperty("user.dir");
 		filePath = workingDir
 				+ "\\src\\test\\java\\com\\testdata\\DemoGuruLoginTestData.xlsx";

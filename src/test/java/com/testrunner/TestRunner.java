@@ -22,17 +22,23 @@ public class TestRunner extends BaseDriverSetup {
 
 	@Test
 	public void loginTest() throws IOException {
+		log.info("Starting the test for login");
 		HomePage hp = new HomePage(driver);
 		String title = hp.verifyTitle();
+		log.info("Getting the page title");
 		Assert.assertEquals(title, "Welcome: Mercury Tours");
+		log.info("Title verified for Homepage.");
 		Properties prop = PropertiesFileReader.readPropertiesFile(
 				".\\src\\test\\java\\com\\testdata\\config.properties");
+		log.info("Entering the Username and password");
 		lp = hp.login(prop.getProperty("user"), prop.getProperty("pass"));
+		log.info("Login Successfull");
 	}
 	@Test(dependsOnMethods = {"loginTest"})
 	public void registeration() throws InterruptedException {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Login: Mercury Tours");
+		log.info("Title verified for Loginpage.");
 		System.out.println(lp.getLoginMsg());
 	}
 	@Test(dependsOnMethods = {"registeration"}, dataProvider = "myData")
@@ -66,9 +72,16 @@ public class TestRunner extends BaseDriverSetup {
 	}
 
 	@Test(priority = 3, enabled = false)
-	public void bookingFlights() {
-		fp.fillingFlightDetails("3", "Sydney", "9", "16", "Paris", "10", "19",
-				"Unified Airlines");
+	public void bookingFlights() throws IOException {
+		Properties prop = PropertiesFileReader.readPropertiesFile(
+				".\\src\\test\\java\\com\\testdata\\config.properties");
+		fp.fillingFlightDetails(prop.getProperty("passengerNumber"),
+				prop.getProperty("departingCity"),
+				prop.getProperty("departingMonth"),
+				prop.getProperty("departingDay"),
+				prop.getProperty("arrivingCity"),
+				prop.getProperty("returningMonth"),
+				prop.getProperty("returningDay"), prop.getProperty("airline"));
 	}
 
 	@DataProvider(name = "myData")

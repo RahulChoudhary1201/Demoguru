@@ -28,11 +28,14 @@ public class RegistrationPage extends WebActions {
 	private By submitBtn = By.xpath("//input[@name='submit']");
 
 	public String getRegPageTitle() {
+		log.info("returning the title of Registration page.");
 		return driver.getTitle();
 	}
 
 	public void navigatingToRegPage() {
+		log.info("Clicking on the registration page link for navigating to it.");
 		driver.findElement(registerBtn).click();
+		log.info("Clicked the link and waiting for the page to load.");
 		waiting(firstName);
 	}
 
@@ -41,6 +44,7 @@ public class RegistrationPage extends WebActions {
 			String cityValue, String stateValue, String postalCodeValue,
 			String countryValue, String userNameValue, String passValue,
 			String confirmPassValue) throws InterruptedException {
+		log.info("Entering the data from the dataprovide to respective fields.");
 		driver.findElement(firstName).sendKeys(firstNameValue);
 		driver.findElement(lastName).sendKeys(lastNameValue);
 		driver.findElement(phone).sendKeys(phoneValue);
@@ -54,7 +58,9 @@ public class RegistrationPage extends WebActions {
 		driver.findElement(userName).sendKeys(userNameValue);
 		driver.findElement(pass).sendKeys(passValue);
 		driver.findElement(confPass).sendKeys(confirmPassValue);
+		log.info("Entered all the data. Clicking on the Submit button.");
 		driver.findElement(submitBtn).click();
+		log.info("Clicked on the submit button and returing Flights page Object.");
 		return new FlightsPage(driver);
 	}
 

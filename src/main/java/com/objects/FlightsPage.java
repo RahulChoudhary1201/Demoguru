@@ -8,6 +8,7 @@ import com.utils.WebActions;
 public class FlightsPage extends WebActions {
 
 	private WebDriver driver;
+
 	public FlightsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -26,9 +27,12 @@ public class FlightsPage extends WebActions {
 	private By continueBtn = By.xpath("//input[@name='findFlights']");
 
 	public String getFlightPageTitle() {
+		log.info("returning the title of Flights page.");
 		return driver.getTitle();
 	}
 	public void navigateToFPage() {
+		log.info(
+				"Clicking on the Flights page link, for navigating to the Flights page");
 		driver.findElement(flightsPage).click();
 		waiting(typeTrip);
 	}
@@ -37,6 +41,7 @@ public class FlightsPage extends WebActions {
 			String departingMon, String monthDay, String arrivingCity,
 			String returningMonthValue, String returnMonthDayValue,
 			String airlineValue) {
+		log.info("Started Entering the data.");
 		driver.findElement(typeTrip).click();
 		dropDownAction(driver.findElement(passengerNumber), passengerNum);
 		dropDownAction(driver.findElement(departinFrom), departingCity);
@@ -47,7 +52,9 @@ public class FlightsPage extends WebActions {
 		dropDownAction(driver.findElement(returingDay), returnMonthDayValue);
 		driver.findElement(serviceClass).click();
 		dropDownByVisibleText(driver.findElement(airline), airlineValue);
+		log.info("Entered all the data in the respective fields");
 		driver.findElement(continueBtn).click();
+		log.info("Clicking on the Continue button to submit the form.");
 	}
 
 }
