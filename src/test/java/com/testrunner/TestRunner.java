@@ -20,7 +20,7 @@ public class TestRunner extends BaseDriverSetup {
 	LoginPage lp;
 	FlightsPage fp;
 
-	@Test
+	@Test(groups = {"newUser"})
 	public void loginTest() throws IOException {
 		log.info("Starting the test for login");
 		HomePage hp = new HomePage(driver);
@@ -34,14 +34,14 @@ public class TestRunner extends BaseDriverSetup {
 		lp = hp.login(prop.getProperty("user"), prop.getProperty("pass"));
 		log.info("Login Successfull");
 	}
-	@Test(dependsOnMethods = {"loginTest"})
+	@Test(dependsOnMethods = {"loginTest"}, groups = {"newUser"})
 	public void registeration() throws InterruptedException {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Login: Mercury Tours");
 		log.info("Title verified for Loginpage.");
 		System.out.println(lp.getLoginMsg());
 	}
-	@Test(dependsOnMethods = {"registeration"}, dataProvider = "myData")
+	@Test(dependsOnGroups = {"newUser"}, dataProvider = "myData")
 	public void registrationFormFilling(String firstNameValue,
 			String lastNameValue, String phoneValue, String emailValue,
 			String addressValue, String cityValue, String stateValue,

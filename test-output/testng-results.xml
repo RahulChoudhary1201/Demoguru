@@ -2,12 +2,16 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-05T10:07:03 IST" name="Suite" finished-at="2023-09-05T10:07:29 IST" duration-ms="25790">
+  <suite started-at="2023-09-05T10:12:43 IST" name="Suite" finished-at="2023-09-05T10:13:05 IST" duration-ms="21832">
     <groups>
+      <group name="newUser">
+        <method signature="TestRunner.loginTest()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" name="loginTest" class="com.testrunner.TestRunner"/>
+        <method signature="TestRunner.registeration()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" name="registeration" class="com.testrunner.TestRunner"/>
+      </group> <!-- newUser -->
     </groups>
-    <test started-at="2023-09-05T10:07:03 IST" name="Test" finished-at="2023-09-05T10:07:29 IST" duration-ms="25790">
+    <test started-at="2023-09-05T10:12:43 IST" name="Test" finished-at="2023-09-05T10:13:05 IST" duration-ms="21832">
       <class name="com.testrunner.TestRunner">
-        <test-method is-config="true" signature="invokeDriver(java.lang.String,java.lang.String)[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:07:03 IST" name="invokeDriver" finished-at="2023-09-05T10:07:11 IST" duration-ms="8236" status="PASS">
+        <test-method is-config="true" signature="invokeDriver(java.lang.String,java.lang.String)[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:12:43 IST" name="invokeDriver" finished-at="2023-09-05T10:12:53 IST" duration-ms="9368" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +27,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeDriver -->
-        <test-method signature="loginTest()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:07:12 IST" name="loginTest" finished-at="2023-09-05T10:07:15 IST" duration-ms="3087" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:12:53 IST" name="loginTest" finished-at="2023-09-05T10:12:56 IST" duration-ms="3057" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="registeration()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:07:15 IST" name="registeration" finished-at="2023-09-05T10:07:15 IST" depends-on-methods="com.testrunner.TestRunner.loginTest" duration-ms="39" status="PASS">
+        <test-method signature="registeration()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:12:56 IST" name="registeration" finished-at="2023-09-05T10:12:56 IST" depends-on-methods="com.testrunner.TestRunner.loginTest" duration-ms="44" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registeration -->
-        <test-method signature="registrationFormFilling(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:07:15 IST" name="registrationFormFilling" data-provider="myData" finished-at="2023-09-05T10:07:27 IST" depends-on-methods="com.testrunner.TestRunner.registeration" duration-ms="11725" status="PASS">
+        <test-method signature="registrationFormFilling(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:12:57 IST" name="registrationFormFilling" data-provider="myData" depends-on-groups="newUser" finished-at="2023-09-05T10:13:03 IST" duration-ms="6744" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -97,7 +101,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationFormFilling -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:07:27 IST" name="tearDown" finished-at="2023-09-05T10:07:29 IST" duration-ms="1923" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testrunner.TestRunner@4fd4cae3]" started-at="2023-09-05T10:13:03 IST" name="tearDown" finished-at="2023-09-05T10:13:05 IST" duration-ms="1953" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
